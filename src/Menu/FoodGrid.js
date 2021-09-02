@@ -29,11 +29,16 @@ export const Food = styled(Title)`
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0px 0px 10px 0px grey;
+  box-shadow: 0px 0px 2px 0px grey;
+  transition-property: box-shadow margin-top;
+  transition-duration: 0.1s;
+  margin-top: 5px;
   z-index: 1;
   color: #fff;
   &:hover {
     cursor: pointer;
-    opacity: 0.7;
+    margin-top: 0;
+    margin-bottom: 5px;
+    box-shadow: 0px 5px 10px 0px grey;
   }
 `;
