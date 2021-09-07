@@ -6,11 +6,12 @@ import { FoodDialog } from "./FoodDialog/FoodDialog";
 import { Order } from "./Order/Order";
 import { useOpenFood } from "./Hooks/useOpenFood";
 import { useOrders } from "./Hooks/useOrders";
+import { useTitle } from "./Hooks/useTitle";
 
 function App() {
   const openFood = useOpenFood();
   const orders = useOrders();
-  console.log(openFood);
+  useTitle({ ...openFood, ...orders });
   return (
     <>
       <GlobalStyle />
