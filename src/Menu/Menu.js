@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { foods } from "../Data/FoodData";
+import { foods, formatPrice } from "../Data/FoodData";
 import { FoodGrid, Food, FoodLabel } from "./FoodGrid";
 
 const MenuStyled = styled.div`
@@ -23,7 +23,8 @@ export function Menu({ setOpenFood }) {
                 }}
               >
                 <FoodLabel />
-                {food.name}
+                {food.name} <br />
+                {formatPrice(food.price)}
               </Food>
             ))}
           </FoodGrid>

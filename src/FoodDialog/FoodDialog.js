@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { pizzaRed } from "../Styles/colors";
 import { Title } from "../Styles/title";
+import { formatPrice } from "../Data/FoodData";
 
 const Dialog = styled.div`
   max-width: 700px;
@@ -79,7 +80,7 @@ export function FoodDialog({ openFood, setOpenFood, setOrders, orders }) {
   if (!openFood) return null;
 
   const order = {
-    name: openFood.name,
+    ...openFood,
   };
 
   function addToOrder() {
@@ -95,7 +96,9 @@ export function FoodDialog({ openFood, setOpenFood, setOrders, orders }) {
         </DialogBanner>
         <DialogContent />
         <DialogFooter>
-          <ConfirmButton onClick={addToOrder}>Add To Order</ConfirmButton>
+          <ConfirmButton onClick={addToOrder}>
+            Add To Order: {formatPrice(openFood.price)}
+          </ConfirmButton>
         </DialogFooter>
       </Dialog>
       <DialogShadow onClick={close} />
