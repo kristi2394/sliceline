@@ -44,6 +44,7 @@ const DetailItem = styled.div`
   font-size: 10px;
 `;
 export function Order({ orders }) {
+  console.log(orders);
   const subtotal = orders.reduce((total, order) => {
     return total + getThePrice(order);
   }, 0);
@@ -69,6 +70,7 @@ export function Order({ orders }) {
                     .filter((t) => t.checked)
                     .map((topping) => topping.name)
                     .join(", ")}
+                  {order.choice && <DetailItem>{order.choice}</DetailItem>}
                 </DetailItem>
               </OrderContainer>
             ))}
