@@ -22,5 +22,30 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAQdfxhtGQMkeVZyN2Owu-OnweerS-9TTM",
+        authDomain: "sliceline-ed0dc.firebaseapp.com",
+        databaseURL:
+          "https://sliceline-ed0dc-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "sliceline-ed0dc",
+        storageBucket: "sliceline-ed0dc.appspot.com",
+        messagingSenderId: "51547655043",
+        appId: "1:51547655043:web:6bae919265db73526d44b6",
+        measurementId: "G-WEYGSE8NTF",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
   </body>
 </html>
